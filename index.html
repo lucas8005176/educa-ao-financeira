@@ -1,0 +1,1557 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Aprenda educação financeira, organização pessoal e planejamento do seu futuro.">
+<title>Vida em Equilíbrio | Educação Financeira</title>
+
+<style>
+:root {
+    --green: #16a34a;
+    --green-dark: #064e3b;
+    --green-light: #dcfce7;
+    --background: #f5f8f6;
+    --white: #ffffff;
+    --text: #19352a;
+    --muted: #718078;
+    --border: #e5eee8;
+    --red: #dc5252;
+    --blue: #3b82f6;
+    --shadow: 0 12px 35px rgba(17, 54, 35, .07);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+button, input, select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+/* MENU */
+
+header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.menu {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+    color: var(--green-dark);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--green);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.nav-links a:hover {
+    color: var(--green);
+}
+
+.menu-button {
+    display: none;
+    background: var(--green-light);
+    color: var(--green-dark);
+    border: 0;
+    border-radius: 8px;
+    padding: 9px 13px;
+    font-size: 20px;
+}
+
+/* CAPA */
+
+.hero {
+    background:
+        radial-gradient(circle at 85% 20%, #32b96955, transparent 30%),
+        linear-gradient(120deg, #052e20, #075b3c 60%, #12834c);
+    color: white;
+    padding: 90px 0;
+    overflow: hidden;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    align-items: center;
+    gap: 45px;
+}
+
+.tag {
+    display: inline-block;
+    background: #ffffff1c;
+    border: 1px solid #ffffff40;
+    padding: 7px 15px;
+    border-radius: 30px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.12;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: #86efac;
+}
+
+.hero p {
+    color: #d1fae5;
+    max-width: 570px;
+    font-size: 17px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    padding: 13px 20px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-white {
+    background: white;
+    color: var(--green-dark);
+}
+
+.btn-outline {
+    border: 1px solid #ffffff80;
+    color: white;
+    background: transparent;
+}
+
+.hero-card {
+    background: #ffffff17;
+    border: 1px solid #ffffff35;
+    border-radius: 22px;
+    padding: 30px;
+    backdrop-filter: blur(12px);
+}
+
+.hero-card h3 {
+    margin-bottom: 20px;
+    font-size: 19px;
+}
+
+.hero-number {
+    font-size: 35px;
+    font-weight: 800;
+    color: #86efac;
+}
+
+.hero-card p {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.hero-list {
+    list-style: none;
+    margin-top: 23px;
+}
+
+.hero-list li {
+    padding: 10px 0;
+    border-top: 1px solid #ffffff25;
+    font-size: 14px;
+}
+
+/* SEÇÕES */
+
+section {
+    padding: 75px 0;
+    scroll-margin-top: 85px;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 40px;
+}
+
+.section-label {
+    color: var(--green);
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: 34px;
+    color: var(--green-dark);
+    line-height: 1.2;
+    margin: 10px 0 14px;
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+/* CARTÕES */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 27px;
+    border-radius: 17px;
+    box-shadow: var(--shadow);
+    transition: .25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #a7e7bb;
+}
+
+.card-icon {
+    width: 52px;
+    height: 52px;
+    background: var(--green-light);
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    font-size: 26px;
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    color: var(--green-dark);
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* EDUCAÇÃO FINANCEIRA */
+
+.financial-banner {
+    background: linear-gradient(110deg, #dcfce7, #effcf4);
+    border: 1px solid #bbebca;
+    border-radius: 20px;
+    padding: 32px;
+    margin-top: 25px;
+}
+
+.financial-banner h3 {
+    color: var(--green-dark);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.financial-banner p {
+    color: #41664f;
+}
+
+/* REGRA FINANCEIRA */
+
+.rule-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.rule {
+    padding: 23px;
+    background: white;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+}
+
+.rule .percentage {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--green);
+}
+
+.rule p {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* GESTÃO PESSOAL */
+
+.personal {
+    background: #eaf5ed;
+}
+
+.personal .card {
+    box-shadow: none;
+}
+
+/* FERRAMENTAS */
+
+.tools {
+    background: #f0f7f2;
+}
+
+.tool-box {
+    max-width: 780px;
+    margin: auto;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+.tool-box h3 {
+    color: var(--green-dark);
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+
+.tool-description {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 23px;
+}
+
+.field-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.field {
+    margin-bottom: 17px;
+}
+
+.field label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.field input,
+.field select {
+    width: 100%;
+    border: 1px solid #dce6df;
+    border-radius: 9px;
+    padding: 13px;
+    outline: none;
+    background: #fbfdfb;
+}
+
+.field input:focus,
+.field select:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px #16a34a18;
+}
+
+.btn-green {
+    background: var(--green);
+    color: white;
+    width: 100%;
+}
+
+.btn-green:hover {
+    background: var(--green-dark);
+}
+
+.result-box {
+    margin-top: 22px;
+    padding: 22px;
+    background: #f1faf3;
+    border: 1px solid #ccebd4;
+    border-radius: 12px;
+    display: none;
+}
+
+.result-box h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.result-number {
+    font-weight: 800;
+    font-size: 29px;
+    color: var(--green);
+    margin-bottom: 5px;
+}
+
+.result-box p {
+    font-size: 14px;
+}
+
+.status-negative {
+    color: var(--red);
+}
+
+/* BARRAS */
+
+.progress-area {
+    margin-top: 20px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 14px 0 6px;
+}
+
+.progress {
+    width: 100%;
+    height: 10px;
+    background: #e7eee9;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0;
+    border-radius: 20px;
+    transition: .5s;
+}
+
+.needs-fill {
+    background: #16a34a;
+}
+
+.wants-fill {
+    background: #3b82f6;
+}
+
+.savings-fill {
+    background: #e6a23c;
+}
+
+/* METAS */
+
+.goal-result {
+    background: #eff8ff;
+    border-color: #c9e5fb;
+}
+
+.goal-result .result-number {
+    color: var(--blue);
+}
+
+/* TAREFAS */
+
+.task-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.task-form input {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid #dce6df;
+    padding: 13px;
+    border-radius: 9px;
+}
+
+.task-form select {
+    border: 1px solid #dce6df;
+    padding: 10px;
+    border-radius: 9px;
+    max-width: 130px;
+}
+
+.task-form button {
+    background: var(--green);
+    color: white;
+    border: none;
+    padding: 12px 19px;
+    border-radius: 9px;
+    font-weight: bold;
+}
+
+.task-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.task-item input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--green);
+}
+
+.task-text {
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+
+.task-done {
+    text-decoration: line-through;
+    color: #9ca9a0;
+}
+
+.task-category {
+    font-size: 11px;
+    border-radius: 20px;
+    background: #e8f5ec;
+    color: var(--green-dark);
+    padding: 5px 9px;
+}
+
+.remove-task {
+    background: #fff0f0;
+    color: var(--red);
+    border: none;
+    border-radius: 7px;
+    padding: 7px 10px;
+}
+
+.task-count {
+    margin-top: 15px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* DICAS */
+
+.tips {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.tip {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 22px;
+    border-radius: 13px;
+}
+
+.tip strong {
+    color: var(--green-dark);
+}
+
+/* FRASE FINAL */
+
+.final-banner {
+    background: linear-gradient(120deg, #064e3b, #15803d);
+    border-radius: 23px;
+    text-align: center;
+    color: white;
+    padding: 48px 25px;
+}
+
+.final-banner h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.final-banner p {
+    color: #d1fae5;
+}
+
+/* RODAPÉ */
+
+footer {
+    margin-top: 70px;
+    background: #052e20;
+    color: white;
+    padding: 35px 0;
+    text-align: center;
+}
+
+footer p {
+    color: #b6d8c3;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width: 850px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .rule-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 650px) {
+    .menu {
+        min-height: 65px;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        background: white;
+        width: 100%;
+        padding: 20px;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        padding: 65px 0;
+    }
+
+    .grid,
+    .tips,
+    .field-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 55px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+    .tool-box {
+        padding: 21px;
+    }
+
+    .task-form {
+        flex-wrap: wrap;
+    }
+
+    .task-form input {
+        flex-basis: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container menu">
+        <a class="logo" href="#inicio">Vida<span>+</span></a>
+
+        <button class="menu-button" onclick="toggleMenu()" aria-label="Abrir menu">
+            ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#inicio">Início</a>
+            <a href="#financeira">Educação financeira</a>
+            <a href="#gestao">Gestão pessoal</a>
+            <a href="#orcamento">Meu orçamento</a>
+            <a href="#metas">Minhas metas</a>
+            <a href="#tarefas">Organização</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<!-- CAPA -->
+
+<section class="hero" id="inicio">
+    <div class="container hero-content">
+
+        <div>
+            <span class="tag">💚 CONHECIMENTO PARA A VIDA</span>
+
+            <h1>
+                Seu futuro começa com
+                <span>boas escolhas.</span>
+            </h1>
+
+            <p>
+                Aprenda a administrar seu dinheiro, organizar seu tempo,
+                controlar seus gastos e construir uma vida com mais
+                planejamento e responsabilidade.
+            </p>
+
+            <div class="hero-buttons">
+                <a class="btn btn-white" href="#financeira">
+                    Começar a aprender →
+                </a>
+
+                <a class="btn btn-outline" href="#orcamento">
+                    Planejar meu dinheiro
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <h3>🌱 Pequenos passos, grandes conquistas</h3>
+
+            <div class="hero-number">100%</div>
+            <p>O planejamento começa com uma decisão: aprender a se organizar.</p>
+
+            <ul class="hero-list">
+                <li>✓ Conhecer seus gastos</li>
+                <li>✓ Criar objetivos</li>
+                <li>✓ Administrar seu tempo</li>
+                <li>✓ Planejar o futuro</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<!-- INTRODUÇÃO -->
+
+<section id="financeira">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-label">EDUCAÇÃO E CONHECIMENTO</span>
+            <h2>O que é educação financeira?</h2>
+            <p>
+                É aprender a tomar decisões conscientes sobre o dinheiro,
+                sabendo organizar receitas, despesas, economias e objetivos.
+            </p>
+        </div>
+
+        <div class="grid">
+
+            <article class="card">
+                <div class="card-icon">💰</div>
+                <h3>Controle financeiro</h3>
+                <p>
+                    Conhecer quanto dinheiro entra e quanto sai,
+                    acompanhando todas as despesas.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">🏦</div>
+                <h3>Poupança</h3>
+                <p>
+                    Separar uma quantia possível para guardar
+                    e utilizar em objetivos futuros.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">📊</div>
+                <h3>Planejamento</h3>
+                <p>
+                    Organizar o dinheiro antes de gastar,
+                    priorizando as necessidades.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">🛒</div>
+                <h3>Consumo consciente</h3>
+                <p>
+                    Refletir antes de comprar e avaliar
+                    se determinado produto realmente é necessário.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">🎯</div>
+                <h3>Metas financeiras</h3>
+                <p>
+                    Definir objetivos e planejar quanto será
+                    necessário guardar para alcançá-los.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">📚</div>
+                <h3>Conhecimento</h3>
+                <p>
+                    Aprender sobre orçamento, juros, dívidas,
+                    inflação e decisões financeiras.
+                </p>
+            </article>
+
+        </div>
+
+        <div class="financial-banner">
+            <h3>💡 Por que aprender educação financeira?</h3>
+            <p>
+                Porque saber administrar o dinheiro ajuda a evitar
+                desperdícios, compreender os próprios limites,
+                enfrentar imprevistos e realizar planos com mais organização.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- REGRA 50 30 20 -->
+
+<section>
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-label">PLANEJAMENTO</span>
+            <h2>Conheça a regra 50-30-20</h2>
+            <p>
+                É um exemplo de divisão do orçamento que pode ajudar
+                a organizar o dinheiro. Não é uma regra obrigatória:
+                os valores podem mudar conforme a realidade de cada pessoa.
+            </p>
+        </div>
+
+        <div class="rule-grid">
+
+            <div class="rule">
+                <div class="percentage">50%</div>
+                <h3>Necessidades</h3>
+                <p>
+                    Despesas essenciais, como moradia, alimentação,
+                    transporte e contas básicas.
+                </p>
+            </div>
+
+            <div class="rule">
+                <div class="percentage">30%</div>
+                <h3>Desejos</h3>
+                <p>
+                    Gastos que não são essenciais, como lazer,
+                    passeios e compras pessoais.
+                </p>
+            </div>
+
+            <div class="rule">
+                <div class="percentage">20%</div>
+                <h3>Economia</h3>
+                <p>
+                    Dinheiro destinado a objetivos, reservas
+                    e planos futuros, quando possível.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- GESTÃO PESSOAL -->
+
+<section class="personal" id="gestao">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-label">DESENVOLVIMENTO PESSOAL</span>
+            <h2>O que é gestão pessoal?</h2>
+            <p>
+                É a habilidade de administrar a própria vida,
+                organizar compromissos, controlar o tempo,
+                desenvolver responsabilidades e alcançar objetivos.
+            </p>
+        </div>
+
+        <div class="grid">
+
+            <article class="card">
+                <div class="card-icon">⏰</div>
+                <h3>Gestão do tempo</h3>
+                <p>
+                    Organizar horários e distribuir as atividades
+                    entre estudos, trabalho e descanso.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">🗓️</div>
+                <h3>Planejamento semanal</h3>
+                <p>
+                    Registrar compromissos e estabelecer
+                    prioridades para cada dia.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">🧠</div>
+                <h3>Autoconhecimento</h3>
+                <p>
+                    Reconhecer habilidades, dificuldades
+                    e aspectos que podem ser melhorados.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">✅</div>
+                <h3>Responsabilidade</h3>
+                <p>
+                    Cumprir compromissos e assumir
+                    as consequências das próprias decisões.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">🚀</div>
+                <h3>Produtividade</h3>
+                <p>
+                    Utilizar o tempo de maneira organizada
+                    para realizar atividades importantes.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">🌟</div>
+                <h3>Objetivos de vida</h3>
+                <p>
+                    Criar metas pessoais, escolares e profissionais
+                    para orientar o próprio desenvolvimento.
+                </p>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CALCULADORA DE ORÇAMENTO -->
+
+<section class="tools" id="orcamento">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-label">FERRAMENTA INTERATIVA</span>
+            <h2>Meu planejamento financeiro</h2>
+            <p>
+                Preencha os valores para descobrir como está
+                a divisão do seu orçamento.
+            </p>
+        </div>
+
+        <div class="tool-box">
+
+            <h3>💵 Calculadora de orçamento</h3>
+            <p class="tool-description">
+                Informe sua renda e os valores que pretende gastar.
+            </p>
+
+            <div class="field">
+                <label for="income">Renda total (R$)</label>
+                <input type="number" id="income" min="0" step="0.01"
+                placeholder="Ex: 2000">
+            </div>
+
+            <div class="field-grid">
+
+                <div class="field">
+                    <label for="needs">Necessidades (R$)</label>
+                    <input type="number" id="needs" min="0" step="0.01"
+                    placeholder="Ex: 1000">
+                </div>
+
+                <div class="field">
+                    <label for="wants">Desejos (R$)</label>
+                    <input type="number" id="wants" min="0" step="0.01"
+                    placeholder="Ex: 400">
+                </div>
+
+            </div>
+
+            <div class="field">
+                <label for="savings">Economia (R$)</label>
+                <input type="number" id="savings" min="0" step="0.01"
+                placeholder="Ex: 300">
+            </div>
+
+            <button class="btn btn-green" onclick="calculateBudget()">
+                CALCULAR MEU ORÇAMENTO
+            </button>
+
+            <div class="result-box" id="budgetResult" aria-live="polite">
+                <h3>Resultado do seu planejamento</h3>
+                <div class="result-number" id="balance">R$ 0,00</div>
+                <p id="budgetMessage"></p>
+
+                <div class="progress-area">
+
+                    <div class="progress-info">
+                        <span>Necessidades</span>
+                        <span id="needsPercent">0%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-fill needs-fill" id="needsBar"></div>
+                    </div>
+
+                    <div class="progress-info">
+                        <span>Desejos</span>
+                        <span id="wantsPercent">0%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-fill wants-fill" id="wantsBar"></div>
+                    </div>
+
+                    <div class="progress-info">
+                        <span>Economia</span>
+                        <span id="savingsPercent">0%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-fill savings-fill" id="savingsBar"></div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- METAS DE ECONOMIA -->
+
+<section id="metas">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-label">SONHOS E CONQUISTAS</span>
+            <h2>Minha meta de economia</h2>
+            <p>
+                Defina um objetivo e descubra quanto tempo
+                poderá levar para alcançá-lo.
+            </p>
+        </div>
+
+        <div class="tool-box">
+
+            <h3>🎯 Simulador de metas</h3>
+            <p class="tool-description">
+                Por exemplo: economizar para comprar um computador,
+                fazer um curso ou realizar uma viagem.
+            </p>
+
+            <div class="field">
+                <label for="goalName">Qual é seu objetivo?</label>
+                <input type="text" id="goalName"
+                placeholder="Ex: Comprar um computador">
+            </div>
+
+            <div class="field-grid">
+                <div class="field">
+                    <label for="goalValue">Valor necessário (R$)</label>
+                    <input type="number" id="goalValue" min="0.01"
+                    step="0.01" placeholder="Ex: 3000">
+                </div>
+
+                <div class="field">
+                    <label for="currentValue">Quanto já possui (R$)</label>
+                    <input type="number" id="currentValue" min="0"
+                    step="0.01" placeholder="Ex: 500">
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="monthlyValue">Quanto pode guardar por mês (R$)</label>
+                <input type="number" id="monthlyValue" min="0.01"
+                step="0.01" placeholder="Ex: 250">
+            </div>
+
+            <button class="btn btn-green" onclick="calculateGoal()">
+                CALCULAR MINHA META
+            </button>
+
+            <div class="result-box goal-result" id="goalResult"
+            aria-live="polite">
+                <h3 id="goalTitle">Minha meta</h3>
+                <div class="result-number" id="goalMonths">0 meses</div>
+                <p id="goalMessage"></p>
+                <div class="progress-area">
+                    <div class="progress-info">
+                        <span>Progresso da meta</span>
+                        <span id="goalPercent">0%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-fill savings-fill"
+                        id="goalBar"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ORGANIZADOR PESSOAL -->
+
+<section class="tools" id="tarefas">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-label">ORGANIZAÇÃO DO DIA A DIA</span>
+            <h2>Meu organizador pessoal</h2>
+            <p>
+                Escreva suas atividades, escolha uma categoria
+                e marque o que já foi concluído.
+            </p>
+        </div>
+
+        <div class="tool-box">
+
+            <h3>📅 Lista de tarefas</h3>
+            <p class="tool-description">
+                Organize seus estudos, compromissos e objetivos.
+            </p>
+
+            <div class="task-form">
+                <input type="text" id="taskInput"
+                placeholder="Digite uma tarefa..."
+                maxlength="100">
+
+                <select id="taskCategory" aria-label="Categoria da tarefa">
+                    <option value="Estudos">Estudos</option>
+                    <option value="Pessoal">Pessoal</option>
+                    <option value="Trabalho">Trabalho</option>
+                    <option value="Outros">Outros</option>
+                </select>
+
+                <button onclick="addTask()">Adicionar</button>
+            </div>
+
+            <ul class="task-list" id="taskList" aria-live="polite">
+                <li class="task-item">
+                    <input type="checkbox" aria-label="Concluir tarefa">
+                    <span class="task-text">Organizar a semana</span>
+                    <span class="task-category">Pessoal</span>
+                    <button class="remove-task"
+                    onclick="this.parentElement.remove(); updateTasks();">
+                        ✕
+                    </button>
+                </li>
+
+                <li class="task-item">
+                    <input type="checkbox" aria-label="Concluir tarefa">
+                    <span class="task-text">Estudar educação financeira</span>
+                    <span class="task-category">Estudos</span>
+                    <button class="remove-task"
+                    onclick="this.parentElement.remove(); updateTasks();">
+                        ✕
+                    </button>
+                </li>
+            </ul>
+
+            <div class="task-count" id="taskCount">
+                Você tem 2 tarefas na lista.
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- DICAS -->
+
+<section id="dicas">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-label">APRENDA MAIS</span>
+            <h2>Hábitos para uma vida organizada</h2>
+            <p>
+                Pequenas atitudes podem ajudar a melhorar
+                a organização financeira e pessoal.
+            </p>
+        </div>
+
+        <div class="tips">
+
+            <div class="tip">
+                <strong>💡 01. Anote seus gastos</strong>
+                <p>Registre suas despesas para saber onde o dinheiro está sendo utilizado.</p>
+            </div>
+
+            <div class="tip">
+                <strong>📅 02. Planeje sua semana</strong>
+                <p>Organize as atividades para evitar esquecimentos e atrasos.</p>
+            </div>
+
+            <div class="tip">
+                <strong>🛍️ 03. Pense antes de comprar</strong>
+                <p>Avalie a necessidade da compra e compare preços.</p>
+            </div>
+
+            <div class="tip">
+                <strong>🎯 04. Crie objetivos</strong>
+                <p>Defina metas que possam ser acompanhadas e ajustadas.</p>
+            </div>
+
+            <div class="tip">
+                <strong>📖 05. Continue aprendendo</strong>
+                <p>Busque conhecimento sobre dinheiro, organização e planejamento.</p>
+            </div>
+
+            <div class="tip">
+                <strong>⚖️ 06. Tenha equilíbrio</strong>
+                <p>Distribua seu tempo entre responsabilidades, lazer e descanso.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CONCLUSÃO -->
+
+<section>
+    <div class="container">
+        <div class="final-banner">
+            <h2>O futuro é construído pelas escolhas de hoje. 🌱</h2>
+            <p>
+                Educação financeira e gestão pessoal são conhecimentos
+                que podem transformar nossa maneira de viver,
+                planejar e conquistar objetivos.
+            </p>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <h2>💚 Vida+</h2>
+        <p>Educação Financeira e Gestão Pessoal</p>
+        <p>Conhecimento, planejamento e responsabilidade.</p>
+        <p>Projeto educativo • 2026</p>
+    </div>
+</footer>
+
+<script>
+
+// MENU PARA CELULAR
+
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("active");
+    });
+});
+
+// FORMATAÇÃO DE DINHEIRO
+
+function money(value) {
+    return value.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+    });
+}
+
+// CALCULADORA FINANCEIRA
+
+function calculateBudget() {
+
+    const income = Number(document.getElementById("income").value);
+    const needs = Number(document.getElementById("needs").value);
+    const wants = Number(document.getElementById("wants").value);
+    const savings = Number(document.getElementById("savings").value);
+
+    const fields = ["income", "needs", "wants", "savings"];
+
+    const invalid = fields.some(id => {
+        const element = document.getElementById(id);
+        return element.value.trim() === "" ||
+               !Number.isFinite(Number(element.value)) ||
+               Number(element.value) < 0;
+    });
+
+    if (invalid) {
+        alert("Preencha todos os campos com valores válidos.");
+        return;
+    }
+
+    if (income <= 0) {
+        alert("A renda precisa ser maior que zero.");
+        return;
+    }
+
+    const total = needs + wants + savings;
+    const balance = income - total;
+
+    const result = document.getElementById("budgetResult");
+    const balanceElement = document.getElementById("balance");
+    const message = document.getElementById("budgetMessage");
+
+    result.style.display = "block";
+    balanceElement.textContent = money(balance);
+
+    if (balance > 0) {
+        message.textContent =
+            "Ótimo! Ainda restam " + money(balance) +
+            " sem destino no orçamento. Você pode planejar esse valor.";
+        balanceElement.classList.remove("status-negative");
+    } else if (balance === 0) {
+        message.textContent =
+            "Seu orçamento está equilibrado: toda a renda foi distribuída.";
+        balanceElement.classList.remove("status-negative");
+    } else {
+        message.textContent =
+            "Atenção! Seus gastos ultrapassaram sua renda em " +
+            money(Math.abs(balance)) + ". Reveja o planejamento.";
+        balanceElement.classList.add("status-negative");
+    }
+
+    const n = needs / income * 100;
+    const w = wants / income * 100;
+    const s = savings / income * 100;
+
+    document.getElementById("needsPercent").textContent =
+        n.toFixed(1) + "%";
+
+    document.getElementById("wantsPercent").textContent =
+        w.toFixed(1) + "%";
+
+    document.getElementById("savingsPercent").textContent =
+        s.toFixed(1) + "%";
+
+    document.getElementById("needsBar").style.width =
+        Math.min(n, 100) + "%";
+
+    document.getElementById("wantsBar").style.width =
+        Math.min(w, 100) + "%";
+
+    document.getElementById("savingsBar").style.width =
+        Math.min(s, 100) + "%";
+
+}
+
+// CALCULADORA DE METAS
+
+function calculateGoal() {
+
+    const name = document.getElementById("goalName").value.trim();
+    const goal = Number(document.getElementById("goalValue").value);
+    const current = Number(document.getElementById("currentValue").value);
+    const monthly = Number(document.getElementById("monthlyValue").value);
+
+    if (
+        !name ||
+        document.getElementById("goalValue").value === "" ||
+        document.getElementById("currentValue").value === "" ||
+        document.getElementById("monthlyValue").value === "" ||
+        !Number.isFinite(goal) ||
+        !Number.isFinite(current) ||
+        !Number.isFinite(monthly) ||
+        goal <= 0 || current < 0 || monthly <= 0
+    ) {
+        alert("Preencha os campos da meta com valores válidos.");
+        return;
+    }
+
+    const remaining = goal - current;
+    const result = document.getElementById("goalResult");
+
+    document.getElementById("goalTitle").textContent = "🎯 " + name;
+
+    const percent = Math.min((current / goal) * 100, 100);
+
+    document.getElementById("goalPercent").textContent =
+        percent.toFixed(1) + "%";
+
+    document.getElementById("goalBar").style.width = percent + "%";
+
+    result.style.display = "block";
+
+    if (remaining <= 0) {
+        document.getElementById("goalMonths").textContent = "Meta alcançada!";
+        document.getElementById("goalMessage").textContent =
+            "Parabéns! Você já alcançou ou ultrapassou seu objetivo.";
+    } else {
+        const months = Math.ceil(remaining / monthly);
+
+        document.getElementById("goalMonths").textContent =
+            months + (months === 1 ? " mês" : " meses");
+
+        document.getElementById("goalMessage").textContent =
+            "Faltam " + money(remaining) +
+            ". Guardando " + money(monthly) +
+            " por mês, a previsão é alcançar sua meta em " +
+            months + (months === 1 ? " mês." : " meses.");
+    }
+}
+
+// ORGANIZADOR DE TAREFAS
+
+function addTask() {
+
+    const input = document.getElementById("taskInput");
+    const category = document.getElementById("taskCategory").value;
+    const text = input.value.trim();
+
+    if (text === "") {
+        alert("Digite uma tarefa antes de adicionar.");
+        input.focus();
+        return;
+    }
+
+    const item = document.createElement("li");
+    item.className = "task-item";
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.setAttribute("aria-label", "Concluir tarefa");
+
+    const taskText = document.createElement("span");
+    taskText.className = "task-text";
+    taskText.textContent = text;
+
+    checkbox.addEventListener("change", () => {
+        taskText.classList.toggle("task-done", checkbox.checked);
+        updateTasks();
+    });
+
+    const label = document.createElement("span");
+    label.className = "task-category";
+    label.textContent = category;
+
+    const remove = document.createElement("button");
+    remove.className = "remove-task";
+    remove.textContent = "✕";
+    remove.setAttribute("aria-label", "Excluir tarefa");
+
+    remove.addEventListener("click", () => {
+        item.remove();
+        updateTasks();
+    });
+
+    item.append(checkbox, taskText, label, remove);
+
+    document.getElementById("taskList").appendChild(item);
+
+    input.value = "";
+    input.focus();
+
+    updateTasks();
+}
+
+// ATUALIZAR CONTADOR DE TAREFAS
+
+function updateTasks() {
+
+    const tasks = document.querySelectorAll("#taskList .task-item");
+    const completed = document.querySelectorAll(
+        "#taskList input[type='checkbox']:checked"
+    );
+
+    const pending = tasks.length - completed.length;
+
+    document.getElementById("taskCount").textContent =
+        tasks.length + (tasks.length === 1
+        ? " tarefa na lista. "
+        : " tarefas na lista. ") +
+        completed.length + " concluídas e " +
+        pending + " pendentes.";
+}
+
+// ATIVAR AS TAREFAS INICIAIS
+
+document.querySelectorAll("#taskList .task-item").forEach(item => {
+
+    const checkbox = item.querySelector("input[type='checkbox']");
+    const taskText = item.querySelector(".task-text");
+
+    checkbox.addEventListener("change", () => {
+        taskText.classList.toggle("task-done", checkbox.checked);
+        updateTasks();
+    });
+
+});
+
+document.getElementById("taskInput").addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+        addTask();
+    }
+});
+
+updateTasks();
+
+</script>
+
+</body>
+</html>
